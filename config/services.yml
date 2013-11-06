@@ -1,0 +1,6 @@
+services:
+    acme.demo.controller:
+        class: acme\demo\controller\main
+        arguments:
+            - @template
+            - @controller.helper
