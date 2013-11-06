@@ -18,10 +18,13 @@ class main
 	/* @var \phpbb\controller\helper */
 	protected $helper;
 
+	/* @var \phpbb\template\template */
+	protected $template;
+
 	/**
 	* Constructor
 	*
-	* @param \phpbb\template			$template
+	* @param \phpbb\template\template	$template
 	* @param \phpbb\controller\helper	$helper
 	*/
 	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper)
