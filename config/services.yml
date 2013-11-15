@@ -4,3 +4,10 @@ services:
         arguments:
             - @template
             - @controller.helper
+    acme.demo.listener:
+        class: acme\demo\event\main_listener
+        arguments:
+            - @controller.helper
+            - @template
+        tags:
+            - { name: event.listener }

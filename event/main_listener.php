@@ -27,6 +27,24 @@ class main_listener implements EventSubscriberInterface
 		);
 	}
 
+	/* @var \phpbb\controller\helper */
+	protected $helper;
+
+	/* @var \phpbb\template\template */
+	protected $template;
+
+	/**
+	* Constructor
+	*
+	* @param \phpbb\controller\helper	$helper		Controller helper object
+	* @param \phpbb\template			$template	Template object
+	*/
+	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template)
+	{
+		$this->helper = $helper;
+		$this->template = $template;
+	}
+
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
@@ -39,10 +57,8 @@ class main_listener implements EventSubscriberInterface
 
 	public function add_page_header_link($event)
 	{
-		global $template, $phpbb_container;
-
-		$template->assign_vars(array(
-			'U_DEMO_PAGE'	=> $phpbb_container->get('controller.helper')->url('demo/world'),
+		$this->template->assign_vars(array(
+			'U_DEMO_PAGE'	=> $this->helper->url('demo/world'),
 		));
 	}
 }
