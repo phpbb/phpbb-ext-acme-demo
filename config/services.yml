@@ -2,8 +2,10 @@ services:
     acme.demo.controller:
         class: acme\demo\controller\main
         arguments:
-            - @template
+            - @config
             - @controller.helper
+            - @template
+            - @user
     acme.demo.listener:
         class: acme\demo\event\main_listener
         arguments:
