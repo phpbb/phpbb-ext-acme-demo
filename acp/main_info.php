@@ -18,7 +18,7 @@ class main_info
 			'title'		=> 'ACP_DEMO_TITLE',
 			'version'	=> '1.0.0',
 			'modes'		=> array(
-				'settings'	=> array('title' => 'ACP_DEMO', 'auth' => 'acl_a_board', 'cat' => array('ACP_DEMO_TITLE')),
+				'settings'	=> array('title' => 'ACP_DEMO', 'auth' => 'ext_acme/demo && acl_a_board', 'cat' => array('ACP_DEMO_TITLE')),
 			),
 		);
 	}
