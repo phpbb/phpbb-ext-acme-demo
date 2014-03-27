@@ -5,7 +5,7 @@
 	"homepage": "https://github.com/nickvergessen/phpbb-ext-acme-demo",
 	"version": "0.1.0",
 	"time": "2013-11-05",
-	"licence": "GPL-2.0",
+	"license": "GPL-2.0",
 	"authors": [{
 			"name": "Joas Schilling",
 			"username": "nickvergessen",
