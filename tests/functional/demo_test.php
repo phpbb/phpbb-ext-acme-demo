@@ -1,0 +1,26 @@
+<?php
+/**
+*
+* @package phpBB Extension - Acme Demo
+* @copyright (c) 2014 phpBB Group
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+*
+*/
+
+namespace acme\demo\tests\functional;
+
+class demo_test extends \acme\demo\tests\framework\functional_test_case
+{
+	public function test_demo_acme()
+	{
+		$crawler = self::request('GET', 'app.php/demo/acme');
+		$this->assertContains('acme', $crawler->filter('h2')->text());
+	}
+
+	public function test_demo_world()
+	{
+		$crawler = self::request('GET', 'app.php/demo/world');
+		$this->assertNotContains('acme', $crawler->filter('h2')->text());
+		$this->assertContains('world', $crawler->filter('h2')->text());
+	}
+}
