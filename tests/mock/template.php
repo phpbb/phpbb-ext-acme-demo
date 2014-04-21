@@ -1,18 +1,18 @@
 <?php
 /**
- *
- * @package NV Newspage Extension
- * @copyright (c) 2014 nickvergessen
- * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
- *
- */
+*
+* @package phpBB Extension - Acme Demo
+* @copyright (c) 2014 phpBB Group
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+*
+*/
 
 namespace acme\demo\tests\mock;
 
 /**
- * Template Mock
- * @package phpBB3
- */
+* Template Mock
+* @package phpBB3
+*/
 class template implements \phpbb\template\template
 {
 	protected $template_data;
