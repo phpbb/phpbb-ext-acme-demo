@@ -9,6 +9,9 @@
 
 namespace acme\demo\tests\functional;
 
+/**
+* @group functional
+*/
 class demo_test extends \acme\demo\tests\framework\functional_test_case
 {
 	public function test_demo_acme()

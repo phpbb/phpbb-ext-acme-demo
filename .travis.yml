@@ -22,13 +22,12 @@ branches:
 
 install:
   # checkout phpBB and move your extension in place
-  - mkdir ../../tmp
-  - cp -R . ../../tmp
-  - cd ../../
+  - mkdir ../tmp
+  - cp -R . ../tmp
   - git clone "git://github.com/phpbb/phpbb.git" "phpBB3"
   - mkdir phpBB3/phpBB/ext
   - mkdir phpBB3/phpBB/ext/$VENDOR
-  - mv tmp phpBB3/phpBB/ext/$VENDOR/$NAME
+  - mv ../tmp phpBB3/phpBB/ext/$VENDOR/$NAME
 
   - cd phpBB3
   - sh -c "if [ '$DB' = 'mariadb' ]; then travis/setup-mariadb.sh; fi"
