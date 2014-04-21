@@ -9,10 +9,6 @@
 
 namespace acme\demo\controller;
 
-/**
-* @ignore
-*/
-
 class main
 {
 	/* @var \phpbb\config\config */
@@ -47,7 +43,7 @@ class main
 	* Demo controller for route /demo/{name}
 	*
 	* @param string		$name
-	* @return Symfony\Component\HttpFoundation\Response A Symfony Response object
+	* @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
 	*/
 	public function handle($name)
 	{
