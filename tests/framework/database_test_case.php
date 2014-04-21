@@ -25,7 +25,7 @@ abstract class database_test_case extends \phpbb_database_test_case
 		{
 			global $phpbb_root_path, $phpEx, $table_prefix;
 
-			$finder = new \phpbb\extension\finder(new \acme\demo\tests\framework\extension_manager(), new \phpbb\filesystem(), $phpbb_root_path);
+			$finder = new \phpbb\extension\finder(new extension_manager(), new \phpbb\filesystem(), $phpbb_root_path);
 			$classes = $finder->core_path('phpbb/')
 				->core_directory('db/migration/data')
 				->extension_directory('migrations')

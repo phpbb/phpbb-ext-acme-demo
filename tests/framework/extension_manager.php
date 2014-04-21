@@ -11,12 +11,14 @@ namespace acme\demo\tests\framework;
 
 class extension_manager extends \phpbb\extension\manager
 {
+	protected $ext_name = 'acme/demo';
+
 	public function __construct()
 	{
 		global $phpbb_root_path;
-		$this->extensions = array('acme/demo' => array(
+		$this->extensions = array($this->ext_name => array(
 			'ext_active' => 1,
-			'ext_path' => $phpbb_root_path . 'ext/acme/demo/',
+			'ext_path' => "{$phpbb_root_path}ext/{$this->ext_name}/",
 		));
 	}
 }
