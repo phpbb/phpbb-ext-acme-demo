@@ -14,7 +14,7 @@
 	<testsuites>
 		<testsuite name="Acme Demo Test Suite">
 			<directory suffix="_test.php">../tests/</directory>
-			<exclude>tests/functional</exclude>
+			<exclude>phpBB/ext/acme/demo/tests/functional/</exclude>s
 		</testsuite>
 		<testsuite name="Acme Demo Functional Tests">
 			<directory suffix="_test.php" phpVersion="5.3.19" phpVersionOperator=">=">../tests/functional/</directory>
