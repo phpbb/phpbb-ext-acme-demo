@@ -36,7 +36,7 @@ abstract class database_test_case extends \phpbb_database_test_case
 			$schema_data = $schema_generator->get_schema();
 
 			$fp = fopen(self::$schema_file, 'wb');
-			fwrite($fp, json_encode($schema_data, JSON_PRETTY_PRINT));
+			fwrite($fp, json_encode($schema_data));// @todo php 5.4+ required: , JSON_PRETTY_PRINT));
 			fclose($fp);
 		}
 
