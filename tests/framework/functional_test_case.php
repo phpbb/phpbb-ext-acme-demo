@@ -48,4 +48,28 @@ abstract class functional_test_case extends \phpbb_functional_test_case
 
 		$this->logout();
 	}
+
+	protected function add_lang_ext($ext_name, $lang_file)
+	{
+		if (is_array($lang_file))
+		{
+			foreach ($lang_file as $file)
+			{
+				$this->add_lang_ext($ext_name, $file);
+			}
+
+			return;
+		}
+
+		$lang_path = __DIR__ . "/../../../../{$ext_name}/language/en/$lang_file.php";
+
+		$lang = array();
+
+		if (file_exists($lang_path))
+		{
+			include($lang_path);
+		}
+
+		$this->lang = array_merge($this->lang, $lang);
+	}
 }
