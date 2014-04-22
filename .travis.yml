@@ -22,18 +22,17 @@ branches:
 
 install:
   # checkout phpBB and move your extension in place
-  - mkdir ../../tmp
-  - cp -R . ../../tmp
-  - cd ../../
+  - mkdir ../tmp
+  - cp -R . ../tmp
   - git clone "git://github.com/phpbb/phpbb.git" "phpBB3"
   - mkdir phpBB3/phpBB/ext
   - mkdir phpBB3/phpBB/ext/$VENDOR
-  - mv tmp phpBB3/phpBB/ext/$VENDOR/$NAME
+  - mv ../tmp phpBB3/phpBB/ext/$VENDOR/$NAME
 
   - cd phpBB3
   - sh -c "if [ '$DB' = 'mariadb' ]; then travis/setup-mariadb.sh; fi"
   - sh -c "if [ '$TRAVIS_PHP_VERSION' != 'hhvm' ]; then travis/setup-php-extensions.sh; fi"
-  # @todo No Functional Tests - sh -c "if [ `php -r "echo (int) version_compare(PHP_VERSION, '5.3.19', '>=');"` = "1" ]; then travis/setup-webserver.sh; fi"
+  - sh -c "if [ `php -r "echo (int) version_compare(PHP_VERSION, '5.3.19', '>=');"` = "1" ]; then travis/setup-webserver.sh; fi"
   - cd phpBB
   - php ../composer.phar install --dev --no-interaction --prefer-source
   - cd ..
