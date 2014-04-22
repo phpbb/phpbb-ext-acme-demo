@@ -12,11 +12,11 @@
          verbose="true"
          bootstrap="../../../../../tests/bootstrap.php">
 	<testsuites>
-		<testsuite name="Acme Demo Test Suite">
+		<testsuite name="Extension Test Suite">
 			<directory suffix="_test.php">../tests/</directory>
 			<exclude>phpBB/ext/acme/demo/tests/functional/</exclude>
 		</testsuite>
-		<testsuite name="Acme Demo Functional Tests">
+		<testsuite name="Extension Functional Tests">
 			<directory suffix="_test.php" phpVersion="5.3.19" phpVersionOperator=">=">../tests/functional/</directory>
 		</testsuite>
 	</testsuites>
