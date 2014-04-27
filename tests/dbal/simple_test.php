@@ -9,8 +9,13 @@
 
 namespace acme\demo\tests\dbal;
 
-class simple_test extends \acme\demo\tests\framework\database_test_case
+class simple_test extends \phpbb_database_test_case
 {
+	static protected function setup_extensions()
+	{
+		return array('acme/demo');
+	}
+
 	/** @var \phpbb\db\driver\driver_interface */
 	protected $db;
 

@@ -12,8 +12,13 @@ namespace acme\demo\tests\functional;
 /**
 * @group functional
 */
-class demo_test extends \acme\demo\tests\framework\functional_test_case
+class demo_test extends \phpbb_functional_test_case
 {
+	static protected function setup_extensions()
+	{
+		return array('acme/demo');
+	}
+
 	public function test_demo_acme()
 	{
 		$crawler = self::request('GET', 'app.php/demo/acme');
