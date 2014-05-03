@@ -11,7 +11,7 @@ env:
   global:
     - EXTNAME="acme/demo"
     - SNIFF="0"
-    - PHPBB_BRANCH="develop-ascraeus"
+    - PHPBB_BRANCH="ticket/12483" # - PHPBB_BRANCH="develop-ascraeus"
   matrix:
     - DB=mysql
 
