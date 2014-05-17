@@ -26,4 +26,14 @@ $lang = array_merge($lang, array(
 	'ACP_DEMO'					=> 'Settings',
 	'ACP_DEMO_GOODBYE'			=> 'Should say goodbye?',
 	'ACP_DEMO_SETTING_SAVED'	=> 'Settings have been saved successfully!',
+
+	'MCP_DEMO_TITLE'			=> 'ACME Demo',
+	'MCP_DEMO'					=> 'Settings',
+	'MCP_DEMO_SETTING'			=> 'Demo MCP setting',
+	'MCP_DEMO_SETTING_SAVED'	=> 'Settings and things go here.',
+
+	'UCP_DEMO_TITLE'			=> 'ACME Demo Module',
+	'UCP_DEMO'					=> 'ACME Demo Settings',
+	'UCP_DEMO_SETTING'			=> 'Demo UCP setting',
+	'UCP_DEMO_SETTING_SAVED'	=> 'Settings have been saved successfully!',
 ));
