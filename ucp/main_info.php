@@ -18,7 +18,7 @@ class main_info
             'title'        => 'UCP_DEMO_TITLE',
             'version'    => '1.0.1',
             'modes'        => array(
-                'settings'    => array('title' => 'UCP_DEMO', 'auth' => '', 'cat' => array('UCP_MAIN')),
+                'settings'    => array('title' => 'UCP_DEMO', 'auth' => 'ext_acme/demo', 'cat' => array('UCP_MAIN')),
             ),
         );
     }

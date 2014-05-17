@@ -18,7 +18,7 @@ class main_info
             'title'        => 'MCP_DEMO_TITLE',
             'version'    => '1.0.1',
             'modes'        => array(
-                'main'    => array('title' => 'MCP_DEMO', 'auth' => '', 'cat' => array('MCP_DEMO_TITLE')),
+                'main'    => array('title' => 'MCP_DEMO', 'auth' => 'ext_acme/demo', 'cat' => array('MCP_DEMO_TITLE')),
             ),
         );
     }
