@@ -14,8 +14,8 @@
 >
 	<testsuites>
 		<testsuite name="Extension Test Suite">
-			<directory suffix="_test.php">./tests/</directory>
-			<exclude>phpBB/ext/acme/demo/tests/functional/</exclude>
+			<directory suffix="_test.php">./tests</directory>
+			<exclude>./tests/functional</exclude>
 		</testsuite>
 		<testsuite name="Extension Functional Tests">
 			<directory suffix="_test.php" phpVersion="5.3.19" phpVersionOperator=">=">./tests/functional/</directory>
