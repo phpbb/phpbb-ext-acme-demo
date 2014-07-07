@@ -27,7 +27,7 @@ class release_1_0_1 extends \phpbb\db\migration\migration
 			'add_tables'		=> array(
 				$this->table_prefix . 'acme_demo'	=> array(
 					'COLUMNS'		=> array(
-						'acme_id'			=> array('UINT', NULL, 'auto_increment'),
+						'acme_id'			=> array('UINT', null, 'auto_increment'),
 						'acme_name'			=> array('VCHAR:255', ''),
 					),
 					'PRIMARY_KEY'	=> 'acme_id',
