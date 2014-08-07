@@ -31,7 +31,7 @@ env:
     - EXTNAME="acme/demo"  # CHANGE name of the extension HERE
     - SNIFF="1"            # Should we run code sniffer on your code?
     - IMAGE_ICC="1"        # Should we run icc profile sniffer on your images?
-    - EPV="1"              # Should we run EPV on your code?
+    - EPV="1"              # Should we run EPV (Extension Pre Validator) on your code?
     - PHPBB_BRANCH="develop-ascraeus"
 
 branches:
