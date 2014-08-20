@@ -1,3 +1,3 @@
-demo_controller:
+acme_demo_controller:
     pattern: /demo/{name}
     defaults: { _controller: acme.demo.controller:handle }
