@@ -28,7 +28,7 @@ class simple_test extends \phpbb_database_test_case
 	{
 		$this->db = $this->new_dbal();
 		$db_tools = new \phpbb\db\tools($this->db);
-		$this->assertTrue($db_tools->sql_column_exists(USERS_TABLE, 'user_acme'));
-		$this->assertFalse($db_tools->sql_column_exists(USERS_TABLE, 'user_acme_demo'));
+		$this->assertTrue($db_tools->sql_column_exists(USERS_TABLE, 'user_acme'), 'Asserting that column "user_acme" exists');
+		$this->assertFalse($db_tools->sql_column_exists(USERS_TABLE, 'user_acme_demo'), 'Asserting that column "user_acme_demo" does not exist');
 	}
 }
