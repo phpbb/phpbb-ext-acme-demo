@@ -1,5 +1,6 @@
-language: php
 sudo: required
+
+language: php
 
 matrix:
   include:
