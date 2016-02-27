@@ -2,7 +2,7 @@
 	"name": "acme/demo",
 	"type": "phpbb-extension",
 	"description": "Acme Demo Extension for phpBB 3.1",
-	"homepage": "https://github.com/nickvergessen/phpbb-ext-acme-demo",
+	"homepage": "https://github.com/phpbb/phpbb-ext-acme-demo",
 	"version": "0.1.0",
 	"time": "2013-11-05",
 	"license": "GPL-2.0",
