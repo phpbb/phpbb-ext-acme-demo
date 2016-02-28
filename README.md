@@ -4,7 +4,7 @@
 
 Clone into phpBB/ext/acme/demo:
 
-    git clone https://github.com/nickvergessen/phpbb-ext-acme-demo.git phpBB/ext/acme/demo
+    $ git clone https://github.com/phpbb/phpbb-ext-acme-demo.git phpBB/ext/acme/demo
 
 Go to "ACP" > "Customise" > "Extensions" and enable the "Acme Demo Extension" extension.
 
@@ -21,7 +21,7 @@ others:
 
     phpBB/vendor/bin/phpunit -c phpBB/ext/acme/demo/phpunit.xml.dist
 
-[![Build Status](https://travis-ci.org/nickvergessen/phpbb-ext-acme-demo.png?branch=master)](https://travis-ci.org/nickvergessen/phpbb-ext-acme-demo)
+[![Build Status](https://travis-ci.org/phpbb/phpbb-ext-acme-demo.svg?branch=master)](https://travis-ci.org/phpbb/phpbb-ext-acme-demo)
 
 ## License
 

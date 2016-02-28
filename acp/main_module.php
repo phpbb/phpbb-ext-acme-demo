@@ -15,8 +15,7 @@ class main_module
 
 	function main($id, $mode)
 	{
-		global $db, $user, $auth, $template, $cache, $request;
-		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
+		global $config, $request, $template, $user;
 
 		$user->add_lang('acp/common');
 		$this->tpl_name = 'demo_body';
