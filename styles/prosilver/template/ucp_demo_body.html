@@ -1,0 +1,30 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+
+<h2>{L_SETTINGS}</h2>
+
+<div class="panel">
+	<div class="inner">
+
+	<fieldset>
+	<dl>
+		<dt><label for="acme_demo_goodbye1">{L_UCP_DEMO_SETTING}{L_COLON}</label></dt>
+		<dd>
+			<input type="radio" name="acme_demo_goodbye" id="acme_demo_goodbye1" value="1"<!-- IF ACME_DEMO_GOODBYE --> checked="checked"<!-- ENDIF --> /> {L_YES}
+			<input type="radio" name="acme_demo_goodbye" id="acme_demo_goodbye0" value="0"<!-- IF not ACME_DEMO_GOODBYE --> checked="checked"<!-- ENDIF --> /> {L_NO}
+		</dd>
+	</dl>
+	</fieldset>
+
+	</div>
+</div>
+
+<fieldset class="submit-buttons">
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE ucp_footer.html -->
