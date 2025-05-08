@@ -30,7 +30,9 @@ class main_test extends \phpbb_test_case
 			->getMock();
 
 		/** @var \phpbb\user $user Mock the user class */
-		$user = $this->getMock('\phpbb\user', array(), array('\phpbb\datetime'));
+		$user = $this->getMockBuilder('\phpbb\user', array(), array('\phpbb\datetime'))
+			->disableOriginalConstructor()
+			->getMock();
 
 		/** @var \phpbb\controller\helper $controller_helper Mock the controller helper class */
 		$controller_helper = $this->getMockBuilder('\phpbb\controller\helper')
