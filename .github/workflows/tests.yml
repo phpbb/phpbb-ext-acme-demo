@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+    push:
+        branches:   # Run tests when commits are pushed to these branches in your repo
+            - main
+            - master
+            - develop
+            - dev/*
+            - testing-framework
+    pull_request:   # Run tests when pull requests are made on these branches in your repo
+        branches:
+            - main
+            - master
+            - develop
+            - dev/*
+            - testing-framework
+
+jobs:
+    call-tests:
+        name: Extension tests
+        uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@3.3.x # The phpBB branch to run tests with
+        with:
+            EXTNAME: acme/demo   # Your extension vendor/package name
