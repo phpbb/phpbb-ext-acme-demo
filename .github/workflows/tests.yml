@@ -1,6 +1,7 @@
 name: Tests
 
 on:
+    workflow_dispatch: # this is unique for external triggering by another repo
     push:
         branches:   # Run tests when commits are pushed to these branches in your repo
             - main
