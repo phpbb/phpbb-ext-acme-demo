@@ -16,7 +16,7 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 		return isset($this->config['acme_demo_goodbye']);
 	}
 
-	static public function depends_on()
+	public static function depends_on()
 	{
 		return array('\phpbb\db\migration\data\v310\alpha2');
 	}
