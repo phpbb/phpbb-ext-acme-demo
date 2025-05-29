@@ -1,23 +1,37 @@
 name: Tests
 
 on:
-    workflow_dispatch:   # this is unique for external triggering by another repo
-    push:
-        branches:        # Run tests when commits are pushed to these branches in your repo
-            - main
-            - master
-            - develop
-            - dev/*
-    pull_request:        # Run tests when pull requests are made on these branches in your repo
-        branches:
-            - main
-            - master
-            - develop
-            - dev/*
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to test against (e.g., 3.3.x, 4.0.x, master)'
+        required: false
+        default: '3.3.x'
+
+  push:
+    branches:
+      - main
+      - master
+      - develop
+      - dev/*
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+      - dev/*
 
 jobs:
-    call-tests:
-        name: Extension tests
-        uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@3.3.x
-        with:
-            EXTNAME: acme/demo   # Your extension vendor/package name
+  call-tests-phpBB3:
+    if: ${{ (github.event_name != 'workflow_dispatch' || github.event.inputs.branch == '' || github.event.inputs.branch == '3.3.x') }}
+    name: Tests for 3.3.x
+    uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@3.3.x
+    with:
+      EXTNAME: acme/demo
+
+  call-tests-phpBB4:
+    if: ${{ github.event.inputs.branch == 'master' }}
+    name: Tests for 4.0.x
+    uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@master
+    with:
+      EXTNAME: acme/demo
