@@ -19,9 +19,17 @@ class demo_test extends \phpbb_functional_test_case
 		return array('acme/demo');
 	}
 
+	protected $controller;
+
+	public function setUp(): void
+	{
+		parent::setUp();
+		$this->controller = phpbb_version_compare(PHPBB_VERSION, '4.0.0-a1', '>=') ? 'index' : 'app';
+	}
+
 	public function test_demo_acme()
 	{
-		$crawler = self::request('GET', 'app.php/demo/acme');
+		$crawler = self::request('GET', $this->controller . '.php/demo/acme');
 		$this->assertStringContainsString('acme', $crawler->filter('h2')->text());
 
 		$this->add_lang_ext('acme/demo', 'common');
@@ -33,7 +41,7 @@ class demo_test extends \phpbb_functional_test_case
 
 	public function test_demo_world()
 	{
-		$crawler = self::request('GET', 'app.php/demo/world');
+		$crawler = self::request('GET', $this->controller . '.php/demo/world');
 		$this->assertStringNotContainsString('acme', $crawler->filter('h2')->text());
 		$this->assertStringContainsString('world', $crawler->filter('h2')->text());
 	}
