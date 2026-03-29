@@ -1,28 +1,27 @@
 {
 	"name": "acme/demo",
 	"type": "phpbb-extension",
-	"description": "Acme Demo Extension for phpBB 3.1",
+	"description": "Acme Demo Extension for phpBB 3.3",
 	"homepage": "https://github.com/phpbb/phpbb-ext-acme-demo",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"time": "2013-11-05",
-	"license": "GPL-2.0",
-	"authors": [{
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
 			"name": "Joas Schilling",
 			"email": "nickvergessen@gmx.de",
 			"homepage": "https://github.com/nickvergessen/",
 			"role": "Lead Developer"
-		}],
+		}
+	],
 	"require": {
-		"php": ">=5.3.3",
-		"composer/installers": "~1.0"
-	},
-	"require-dev": {
-		"phpbb/epv": "dev-master"
+		"php": ">=7.2",
+		"composer/installers": "^1.0 || ^2.0"
 	},
 	"extra": {
 		"display-name": "Acme Demo Extension",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.0-RC2,<3.2@dev"
+			"phpbb/phpbb": ">=3.3.0"
 		}
 	}
 }

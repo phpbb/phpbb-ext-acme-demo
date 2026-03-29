@@ -1,28 +1,32 @@
 <?php
 /**
-*
-* @package phpBB Extension - Acme Demo
-* @copyright (c) 2013 phpBB Group
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
-*
-*/
+ *
+ * Acme Demo Extension. An extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2013, Joas Schilling, https://github.com/nickvergessen/
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace acme\demo\acp;
 
+/**
+ * Acme Demo Extension ACP module info.
+ */
 class main_info
 {
-	function module()
+	public function module()
 	{
-		return array(
+		return [
 			'filename'	=> '\acme\demo\acp\main_module',
 			'title'		=> 'ACP_DEMO_TITLE',
-			'modes'		=> array(
-				'settings'	=> array(
+			'modes'		=> [
+				'settings'	=> [
 					'title'	=> 'ACP_DEMO',
 					'auth'	=> 'ext_acme/demo && acl_a_board',
-					'cat'	=> array('ACP_DEMO_TITLE')
-				),
-			),
-		);
+					'cat'	=> ['ACP_DEMO_TITLE'],
+				],
+			],
+		];
 	}
 }

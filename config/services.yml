@@ -1,15 +1,37 @@
+imports:
+    - { resource: parameters.yml }
+
 services:
-    acme.demo.controller:
-        class: acme\demo\controller\main
+    acme.demo.controller.main:
+        class: acme\demo\controller\main_controller
         arguments:
             - '@config'
             - '@controller.helper'
             - '@template'
+            - '@language'
+
+    acme.demo.controller.acp:
+        class: acme\demo\controller\acp_controller
+        arguments:
+            - '@config'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
             - '@user'
+
+    acme.demo.service:
+        class: acme\demo\service
+        arguments:
+            - '@user'
+            - '%acme.demo.tables.demo_table%'
+
     acme.demo.listener:
         class: acme\demo\event\main_listener
         arguments:
+            - '@language'
             - '@controller.helper'
             - '@template'
+            - '%core.php_ext%'
         tags:
             - { name: event.listener }

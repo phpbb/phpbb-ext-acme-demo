@@ -1,42 +1,48 @@
 <?php
 /**
-*
-* @package phpBB Extension - Acme Demo
-* @copyright (c) 2013 phpBB Group
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
-*
-*/
+ *
+ * Acme Demo Extension. An extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2013, Joas Schilling, https://github.com/nickvergessen/
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace acme\demo\acp;
 
+/**
+ * Acme Demo Extension ACP module.
+ */
 class main_module
 {
-	var $u_action;
+	public $page_title;
+	public $tpl_name;
+	public $u_action;
 
-	function main($id, $mode)
+	/**
+	 * Main ACP module
+	 *
+	 * @param int    $id   The module ID
+	 * @param string $mode The module mode (for example: manage or settings)
+	 * @throws \Exception
+	 */
+	public function main($id, $mode)
 	{
-		global $config, $request, $template, $user;
+		global $phpbb_container;
 
-		$user->add_lang('acp/common');
-		$this->tpl_name = 'demo_body';
-		$this->page_title = $user->lang('ACP_DEMO_TITLE');
-		add_form_key('acme/demo');
+		/** @var \acme\demo\controller\acp_controller $acp_controller */
+		$acp_controller = $phpbb_container->get('acme.demo.controller.acp');
 
-		if ($request->is_set_post('submit'))
-		{
-			if (!check_form_key('acme/demo'))
-			{
-				trigger_error('FORM_INVALID');
-			}
+		// Load a template from adm/style for our ACP page
+		$this->tpl_name = 'acp_demo_body';
 
-			$config->set('acme_demo_goodbye', $request->variable('acme_demo_goodbye', 0));
+		// Set the page title for our ACP page
+		$this->page_title = 'ACP_DEMO_TITLE';
 
-			trigger_error($user->lang('ACP_DEMO_SETTING_SAVED') . adm_back_link($this->u_action));
-		}
+		// Make the $u_action url available in our ACP controller
+		$acp_controller->set_page_url($this->u_action);
 
-		$template->assign_vars(array(
-			'U_ACTION'				=> $this->u_action,
-			'ACME_DEMO_GOODBYE'		=> $config['acme_demo_goodbye'],
-		));
+		// Load the display options handle in our ACP controller
+		$acp_controller->display_options();
 	}
 }

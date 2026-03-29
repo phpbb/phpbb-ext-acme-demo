@@ -1,20 +1,17 @@
 <?php
 /**
-*
-* @package phpBB Extension - Acme Demo
-* @copyright (c) 2013 phpBB Group
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
-*
-*/
+ *
+ * Acme Demo Extension. An extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2013, Joas Schilling, https://github.com/nickvergessen/
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace acme\demo;
 
 /**
-* @ignore
-*/
-
-/**
- * Class ext
+ * Acme Demo Extension base
  *
  * It is recommended to remove this file from
  * an extension if it is not going to be used.
