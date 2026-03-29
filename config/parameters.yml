@@ -1,0 +1,2 @@
+parameters:
+    acme.demo.tables.demo_table: '%core.table_prefix%acme_demo_table'
