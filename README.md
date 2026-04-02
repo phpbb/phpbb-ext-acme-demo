@@ -1,29 +1,33 @@
-# phpBB 3.1 Extension - Acme Demo
+# Acme Demo – A phpBB Extension
 
-## Installation
+A minimal boilerplate extension for **phpBB**, designed to help you quickly get started with extension development. Use it as a foundation and customise it to fit your needs.
 
-Clone into phpBB/ext/acme/demo:
+---
 
-    git clone https://github.com/phpbb/phpbb-ext-acme-demo.git phpBB/ext/acme/demo
+## Getting Started
 
-Go to "ACP" > "Customise" > "Extensions" and enable the "Acme Demo Extension" extension.
+If you're new to phpBB extension development, these resources are a great place to begin:
 
-## Tests and Continuous Integration
+- [phpBB Extension Development Guide](https://area51.phpbb.com/docs/dev/3.3.x/extensions/index.html)  
+  Comprehensive documentation covering everything you need to know.
 
-We use GitHub Actions and PHPUnit for our unit testing. See more information on the [phpBB development wiki](https://wiki.phpbb.com/Unit_Tests).
+- [phpBB Skeleton Extension](https://area51.phpbb.com/docs/dev/3.3.x/extensions/skeleton_extension.html)  
+  A boilerplate generator used to create this demo extension.
 
-[![Tests](https://github.com/phpbb/phpbb-ext-acme-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/phpbb/phpbb-ext-acme-demo/actions/workflows/tests.yml)
+---
 
-To run the tests locally, you need to install phpBB from its Git repository. Afterwards run the following command from the phpBB Git repository's root:
+## Testing & Continuous Integration
 
-Windows:
+This project uses **GitHub Actions** and **PHPUnit** for automated testing.
 
-    phpBB\vendor\bin\phpunit.bat -c phpBB\ext\acme\demo\phpunit.xml.dist
+![Tests](https://github.com/phpbb/phpbb-ext-acme-demo/actions/workflows/tests.yml/badge.svg)
 
-others:
+Learn more about testing phpBB extensions here:
 
-    phpBB/vendor/bin/phpunit -c phpBB/ext/acme/demo/phpunit.xml.dist
+- [phpBB Extension Testing Tutorial](https://area51.phpbb.com/docs/dev/3.3.x/extensions/tutorial_testing.html)
+
+---
 
 ## License
 
-[GPLv2](license.txt)
+This project is licensed under the [GNU General Public License v2](license.txt).
