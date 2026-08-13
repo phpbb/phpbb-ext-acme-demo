@@ -45,9 +45,10 @@ class simple_test extends \phpbb_database_test_case
 		}
 		else
 		{
-			// This is how to instantiate db_tools in phpBB 3.2
+			// This is how to instantiate db_tools in phpBB 3.2 and beyond
 			$factory = new \phpbb\db\tools\factory();
-			$db_tools = $factory->get($this->db);
+			$db = method_exists($this, 'new_doctrine_dbal') ? $this->new_doctrine_dbal() : $this->db;
+			$db_tools = $factory->get($db);
 		}
 
 		$this->assertTrue($db_tools->sql_column_exists(USERS_TABLE, 'user_demo'), 'Asserting that column "user_demo" exists');

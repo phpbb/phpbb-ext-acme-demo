@@ -29,7 +29,7 @@ class view_test extends \phpbb_functional_test_case
 	 */
 	public function test_view_foo()
 	{
-		$crawler = self::request('GET', 'app.php/demo/foo');
+		$crawler = self::request('GET', 'demo/foo');
 		$this->assertStringContainsString('foo', $crawler->filter('h2')->text());
 
 		$this->add_lang_ext('acme/demo', 'common');
@@ -45,7 +45,7 @@ class view_test extends \phpbb_functional_test_case
 	 */
 	public function test_view_bar()
 	{
-		$crawler = self::request('GET', 'app.php/demo/bar');
+		$crawler = self::request('GET', 'demo/bar');
 		$this->assertStringNotContainsString('foo', $crawler->filter('h2')->text());
 		$this->assertStringContainsString('bar', $crawler->filter('h2')->text());
 	}
