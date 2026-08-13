@@ -46,7 +46,7 @@ class main_test extends \phpbb_test_case
 
 		// Set language->lang() to return any arguments sent to it
 		$language->method('lang')
-			->will($this->returnArgument(0));
+			->willReturnArgument(0);
 
 		/** @var \phpbb\controller\helper|\PHPUnit\Framework\MockObject\MockObject $controller_helper Mock the controller helper class */
 		$controller_helper = $this->getMockBuilder('\phpbb\controller\helper')
